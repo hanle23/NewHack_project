@@ -1,8 +1,9 @@
-import React, { useEffect, useState, Component } from "react";
-
-import GoogleMap from "google-maps-react";
-import pin from "./Styles/pin.png";
-import Marker from "./Marker";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import GoogleMap from "google-map-react";
+import shouldPureComponentUpdate from "react-pure-render/function";
+import MyGreatPlaceWithControllableHover from "./hover_marker.jsx";
+import { K_SIZE } from "./hover_style.jsx";
 
 const markerStyle = {
   position: "absolute",
@@ -10,100 +11,75 @@ const markerStyle = {
   left: "50%",
   transform: "translate(-50%, -100%)",
 };
-
 export default class Map extends Component {
+  static propTypes = {
+    center: PropTypes.array, // @controllable
+    zoom: PropTypes.number, // @controllable
+    hoverKey: PropTypes.string, // @controllable
+    clickKey: PropTypes.string, // @controllable
+    onCenterChange: PropTypes.func, // @controllable generated fn
+    onZoomChange: PropTypes.func, // @controllable generated fn
+    onHoverKeyChange: PropTypes.func, // @controllable generated fn
+
+    greatPlaces: PropTypes.array,
+  };
+  static defaultProps = {
+    zoom: 9,
+    greatPlaces: [
+      { id: "A", lat: 59.955413, lng: 30.337844 },
+      { id: "B", lat: 59.724, lng: 30.08 },
+    ],
+  };
+  shouldComponentUpdate = shouldPureComponentUpdate;
   constructor(props) {
     super(props);
-    this.state = {
-      center: {
-        lat: 43.65107,
-        lng: -79.347015,
-      },
-      zoom: 15,
-      locations: this.props.locations,
-      lat1: this.props.locations[0].lat,
-      longitude: this.props.locations[0].lng,
-    };
+    this.state = { test: null, center: [59.838043, 30.337157] };
   }
+
+  _onChildClick = (key, childProps) => {
+    this.setState({ center: [childProps.lat, childProps.lng] });
+  };
+
+  _onChildMouseEnter = (key /*, childProps */) => {
+    this.setState({ test: key });
+  };
+
+  _onChildMouseLeave = (/* key, childProps */) => {
+    this.setState({ test: null });
+  };
+
   render() {
+    const places = this.props.greatPlaces.map((place) => {
+      const { id, ...coords } = place;
+
+      return (
+        <MyGreatPlaceWithControllableHover
+          key={id}
+          {...coords}
+          text={id}
+          // use your hover state (from store, react-controllables etc...)
+          hover={this.state.test === id}
+        />
+      );
+    });
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMap
-          google={window.google}
           bootstrapURLKeys={{
             key: "AIzaSyA16d9FJFh__vK04jU1P64vnEpPc3jenec",
           }}
+          yesIWantToUseGoogleMapApiInternals
+          hoverDistance={K_SIZE / 2}
+          onChildClick={this._onChildClick}
           center={this.state.center}
-          defaultZoom={this.state.zoom}
+          defaultZoom={this.props.zoom}
+          onChildMouseEnter={this._onChildMouseEnter}
+          onChildMouseLeave={this._onChildMouseLeave}
         >
-          <Marker position={(this.state.lat1, this.state.longitude)} />
-
-          {this.state.locations.map((i) => {
-            return (
-              <div
-                key={i.id}
-                lat={i.lat}
-                lng={i.lng}
-                onClick={() => {
-                  this.setState({
-                    longitude: i.lng,
-                    lat1: i.lat,
-                  });
-                }}
-              >
-                <img style={markerStyle} src={pin} alt="pin" />
-              </div>
-            );
-          })}
+          {places}
         </GoogleMap>
       </div>
     );
   }
 }
 
-// export default function Map(props) {
-
-// const [center, setCenter] = useState( {
-//   lat: 43.65107,
-//   lng: -79.347015,
-// })
-
-// const [zoom, setZoom] = useState(15)
-// const [locations , setLocations] = useState([
-//   {
-//     lat : 123,
-//     lng : 92,
-//     id :1,
-//   }
-// ])
-// const [lat1, setLat1] = useState(locations[0].lat)
-// const [longitude, setLongitude] = useState(locations[0].lng)
-
-// return (
-//   // Important! Always set the container height explicitly
-//   <div style={{ height: "100vh", width: "100%" }}>
-//     <GoogleMap
-//       bootstrapURLKeys={{
-//         key: "AIzaSyA16d9FJFh__vK04jU1P64vnEpPc3jenec",
-//       }}
-//       center={center}
-//       defaultZoom={zoom}
-
-//     >
-//        <Marker position={{lat1, longitude}} />
-
-//       {locations.map((i) => {
-//             return (
-//               <div key={i.id} lat={i.lat} lng={i.lng} onClick = { ()=>{
-//                 setLat1(i.lat)
-//                 setLongitude(i.lng)
-//               }}>
-//                 <img style={markerStyle} src={pin} alt="pin" />
-//               </div>
-//             );
-//           })
-//         }
-//     </GoogleMap>
-//   </div>
-// );
-// }

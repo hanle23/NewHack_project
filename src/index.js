@@ -7,13 +7,9 @@ const locations = require("./locations.json");
 
 export default function App() {
   const locate = locations;
-  const clicked = () => {
-    console.log(locations);
-  };
 
   return (
     <div className="App">
-      <div onClick={clicked()}>hello</div>
       <Map locations={locate} />
     </div>
   );
