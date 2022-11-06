@@ -26,18 +26,21 @@ export default class Map extends Component {
   static defaultProps = {
     zoom: 9,
     greatPlaces: [
-      { id: "A", lat: 59.955413, lng: 30.337844 },
-      { id: "B", lat: 59.724, lng: 30.08 },
+      { id: "User", lat: 59.955413, lng: 30.337844 },
+      { id: "A", lat: 59.724, lng: 30.08 },
+      { id: "B", lat: 59.724, lng: 30.98 },
+      { id: "C", lat: 60.0, lng: 30.08 },
     ],
   };
   shouldComponentUpdate = shouldPureComponentUpdate;
   constructor(props) {
     super(props);
-    this.state = { test: null, center: [59.838043, 30.337157] };
+    this.state = { test: null, center: [59.955413, 30.337844] };
   }
 
   _onChildClick = (key, childProps) => {
     this.setState({ center: [childProps.lat, childProps.lng] });
+    this._onChildMouseEnter();
   };
 
   _onChildMouseEnter = (key /*, childProps */) => {
@@ -82,4 +85,3 @@ export default class Map extends Component {
     );
   }
 }
-

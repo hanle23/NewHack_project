@@ -9,21 +9,21 @@ const greatPlaceStyle = {
   left: -K_SIZE / 2,
   top: -K_SIZE / 2,
 
-  border: '5px solid #f44336',
+  border: '0px solid #f44336',
   borderRadius: K_SIZE,
   backgroundColor: 'white',
-  textAlign: 'center',
-  color: '#3f51b5',
-  fontSize: 18,
-  fontWeight: 'bold',
-  padding: 3,
+  color: '#dcdee8',
+  padding: 0,
   cursor: 'pointer'
 };
 
 const greatPlaceStyleHover = {
   ...greatPlaceStyle,
-  border: '3px solid #3f51b5',
-  color: '#f44336'
+  border: '5px solid #3f51b5',
+  color: '#223bc7',
+  fontSize: 11,
+  textAlign: 'center',
+  fontWeight: 'bold'
 };
 
 export {greatPlaceStyle, greatPlaceStyleHover, K_SIZE};
