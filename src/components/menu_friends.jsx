@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import MenuYou from "./menu_you";
 import MenuFriend from "./menu_friend";
 import "../styles/menu.css";
 
 const MenuFriends = () => {
   return (
     <div className="menu_friends">
-      <MenuFriend />
+      <MenuYou />
       <MenuFriend />
       <MenuFriend />
       <MenuFriend />
