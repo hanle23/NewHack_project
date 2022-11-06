@@ -31,7 +31,7 @@ export default class Map extends Component {
       { id: "B", lat: 59.724, lng: 30.98 },
       { id: "C", lat: 60.0, lng: 30.08 },
     ],
-  }
+  };
   shouldComponentUpdate = shouldPureComponentUpdate;
   constructor(props) {
     super(props);
@@ -63,14 +63,14 @@ export default class Map extends Component {
           // use your hover state (from store, react-controllables etc...)
           hover={this.state.test === id}
         />
-      )
-    })
-    
+      );
+    });
+
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMap
           bootstrapURLKeys={{
-            key: "AIzaSyA16d9FJFh__vK04jU1P64vnEpPc3jenec",
+            key: "",
           }}
           yesIWantToUseGoogleMapApiInternals
           hoverDistance={K_SIZE / 2}
