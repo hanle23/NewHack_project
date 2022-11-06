@@ -1,0 +1,100 @@
+:root {
+  --bggrey: rgb(36, 36, 36);
+  --menugrey: rgb(43, 43, 43);
+  --textcolor: rgb(192, 192, 192);
+  --btngrey: rgb(57, 57, 57);
+  --bordergrey: rgb(55, 55, 55);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Radnika", sans-serif;
+  color: rgb(192, 192, 192);
+}
+
+@font-face {
+  font-family: "Radnika";
+  src: url(../assets/radnika.otf);
+  font-style: normal;
+}
+
+.icon_btn {
+  background-color: red;
+}
+
+.main_page {
+  height: 100vh;
+  display: flex;
+  background-color: var(--bggrey);
+}
+
+.circular_div {
+  border: 1px solid rgb(34, 217, 223);
+  border-radius: 50%;
+}
+
+.up_down_btn {
+  padding-top: 12px;
+}
+
+.friend_btn {
+  margin: 0 5px;
+  display: flex;
+  background-color: var(--btngrey);
+  border-radius: 10px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 30px;
+  font-size: "10px";
+}
+
+.main_btn {
+  margin: 0 5px;
+  display: flex;
+  background-color: var(--btngrey);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_btn p {
+  padding-top: 5px;
+}
+
+.menu_friend h5,
+p {
+  text-align: center;
+  margin: 0;
+}
+
+.menu_friends {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top_menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 0px 5px;
+  height: 40px;
+}
+
+.menu {
+  color: rgb(208, 208, 208);
+  border-top: 3px solid var(--bordergrey);
+  position: absolute;
+  bottom: 0;
+  background-color: var(--menugrey);
+  height: 25vh;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  z-index: 10;
+}
