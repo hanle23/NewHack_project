@@ -5,7 +5,7 @@ import "../styles/menu.css";
 
 const Menu = () => {
   return (
-    <div className="menu" style={{ height: "20vh" }}>
+    <div className="menu" style={{ height: "25vh" }}>
       <TopMenu />
       <MenuFriends />
     </div>
