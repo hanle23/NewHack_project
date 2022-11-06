@@ -9,6 +9,7 @@ const Message = () => {
       style={{
         position: "absolute",
         top: "-70px",
+        display: "none",
       }}
     >
       <div className="secondary_container">
