@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../styles/menu.css";
 import "../styles/secondary.css";
 import HistoryEntry from "./history_entry";
+import HistoryEntry2 from "./history_entry2";
+import HistoryEntry3 from "./history_entry3";
 
 const History = () => {
   return (
@@ -31,8 +33,8 @@ const History = () => {
         </button>
       </div>
       <HistoryEntry />
-      <HistoryEntry />
-      <HistoryEntry />
+      <HistoryEntry2 />
+      <HistoryEntry3 />
     </div>
   );
 };

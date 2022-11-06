@@ -60,14 +60,28 @@
   background-color: var(--btngrey);
 }
 
-.end_img {
-  background-image: url("../assets/eiffel.jpeg");
+.end_img_main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 200px;
   margin-right: 10px;
   overflow-x: hidden;
   overflow: hidden;
+}
+
+.end_img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/eiffel.jpeg");
+}
+
+.end_img2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/bali.jpeg");
+}
+
+.end_img3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/tokyo.jpeg");
 }
 
 .sort_btn {
