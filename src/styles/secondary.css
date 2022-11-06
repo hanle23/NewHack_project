@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Radnika", sans-serif;
+  color: rgb(192, 192, 192);
+}
+
+@font-face {
+  font-family: "Radnika";
+  src: url(../assets/radnika.otf);
+  font-style: normal;
+}
+
+.secondary_page {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.secondary_container {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 3px solid var(--bordergrey);
+  border-radius: 15px;
+  background-color: var(--menugrey);
+  display: flex;
+  top: 50%;
+}
+
+.message_container {
+  text-align: center;
+}
+
+.box_img {
+  background-image: url("../assets/eiffel.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 350px;
+  margin: 30px auto 30px auto;
+  height: 30vh;
+}
+
+.history_entry {
+  margin: 5px 0;
+  justify-content: center;
+  text-align: center;
+  border: 0.5px solid white;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 2fr 4fr 3fr;
+  column-gap: 10px;
+  border-radius: 10px;
+  background-color: var(--btngrey);
+}
+
+.end_img_main {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  margin-right: 10px;
+  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.end_img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/eiffel.jpeg");
+}
+
+.end_img2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/bali.jpeg");
+}
+
+.end_img3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/tokyo.jpeg");
+}
+
+.sort_btn {
+  margin: 0 5px;
+  display: flex;
+  background-color: var(--btngrey);
+  border-radius: 10px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 30px;
+  font-size: "10px";
+}
