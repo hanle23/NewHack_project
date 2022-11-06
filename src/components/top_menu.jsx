@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom/client";
 import "../styles/menu.css";
 import "rsuite/dist/rsuite.min.css";
 import Menu from "./menu";

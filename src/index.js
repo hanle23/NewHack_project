@@ -3,17 +3,13 @@ import ReactDOM from "react-dom";
 import Map from "./Map";
 import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
-import Menu from "./components/menu";
-const locations = require("./locations.json");
 
 export default function App() {
-  const locate = locations;
-
   return (
     <div className="App">
-      <Map locations={locate} />
+      <Map />
     </div>
-  )
+  );
 }
 
 const rootElement = document.getElementById("root");
