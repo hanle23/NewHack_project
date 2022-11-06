@@ -12,7 +12,7 @@ const History = () => {
       style={{
         position: "absolute",
         top: "-20px",
-        opacity: "0",
+        display: "none",
       }}
     >
       <div className="secondary_container">
