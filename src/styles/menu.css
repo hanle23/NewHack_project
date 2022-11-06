@@ -57,6 +57,19 @@
   font-size: "10px";
 }
 
+.search_btn {
+  margin: 15px auto 0px auto;
+  display: flex;
+  background-color: var(--btngrey);
+  border-radius: 10px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 30px;
+  font-size: "10px";
+}
+
 .main_btn {
   margin: 0 5px;
   display: flex;
@@ -103,4 +116,5 @@ p {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   z-index: 10;
+  overflow: hidden;
 }

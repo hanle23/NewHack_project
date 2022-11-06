@@ -7,34 +7,43 @@ import HistoryEntry3 from "./history_entry3";
 
 const History = () => {
   return (
-    <div className="secondary_container">
-      <div
-        className="top_history"
-        style={{
-          display: "flex",
-          justifyContent: "end",
-        }}
-      >
-        <button
-          className="sort_btn"
-          style={{ marginBottom: "10px" }}
-          onClick={() => {}}
+    <div
+      className="secondary_page"
+      style={{
+        position: "absolute",
+        top: "-20px",
+        opacity: "0",
+      }}
+    >
+      <div className="secondary_container">
+        <div
+          className="top_history"
+          style={{
+            display: "flex",
+            justifyContent: "end",
+          }}
         >
-          <span>
-            Sort By: &nbsp;<strong>Newest</strong>
-          </span>
-        </button>
-        <button
-          className="main_btn"
-          style={{ marginBottom: "10px" }}
-          onClick={() => {}}
-        >
-          X
-        </button>
+          <button
+            className="sort_btn"
+            style={{ marginBottom: "10px" }}
+            onClick={() => {}}
+          >
+            <span>
+              Sort By: &nbsp;<strong>Newest</strong>
+            </span>
+          </button>
+          <button
+            className="main_btn"
+            style={{ marginBottom: "10px" }}
+            onClick={() => {}}
+          >
+            X
+          </button>
+        </div>
+        <HistoryEntry />
+        <HistoryEntry2 />
+        <HistoryEntry3 />
       </div>
-      <HistoryEntry />
-      <HistoryEntry2 />
-      <HistoryEntry3 />
     </div>
   );
 };
