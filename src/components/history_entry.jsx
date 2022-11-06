@@ -12,7 +12,7 @@ const HistoryEntry = () => {
         <p>Nov 4</p>
       </div>
       <p style={{ fontSize: "12px", margin: "5px" }}>
-        What an amazing place. We enjoyed the view and the amazing dinning
+        What an amazing place. We enjoyed the view and the amazing dining
         experience! Solid 10/10!
       </p>
       <div className="end_img_main end_img"></div>

@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Map from "./Map";
+import { BrowserRouter } from "react-router-dom";
+import "./styles.css";
+import Menu from "./components/menu";
+const locations = require("./locations.json");
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+export default function App() {
+  const locate = locations;
+
+  return (
+    <div className="App">
+      <Map locations={locate} />
+    </div>
+  )
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   rootElement

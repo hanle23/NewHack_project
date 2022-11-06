@@ -31,7 +31,7 @@ export default class Map extends Component {
       { id: "B", lat: 59.724, lng: 30.98 },
       { id: "C", lat: 60.0, lng: 30.08 },
     ],
-  };
+  }
   shouldComponentUpdate = shouldPureComponentUpdate;
   constructor(props) {
     super(props);
@@ -43,11 +43,11 @@ export default class Map extends Component {
     this._onChildMouseEnter();
   };
 
-  _onChildMouseEnter = (key /*, childProps */) => {
+  _onChildMouseEnter = (key, childProps) => {
     this.setState({ test: key });
   };
 
-  _onChildMouseLeave = (/* key, childProps */) => {
+  _onChildMouseLeave = (key, childProps) => {
     this.setState({ test: null });
   };
 
@@ -63,8 +63,9 @@ export default class Map extends Component {
           // use your hover state (from store, react-controllables etc...)
           hover={this.state.test === id}
         />
-      );
-    });
+      )
+    })
+    
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMap

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 
+
+
 import {greatPlaceStyle, greatPlaceStyleHover} from './hover_style.jsx';
 
 export default class MyGreatPlaceWithControllableHover extends Component {
@@ -21,6 +23,7 @@ export default class MyGreatPlaceWithControllableHover extends Component {
     return (
        <div className="hint hint--html hint--info hint--top" style={style}>
           <div>{this.props.text}</div>
+          
        </div>
     );
   }
