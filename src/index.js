@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import SimpleMap from "./Map";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import Map from "./Map";
+import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
 const locations = require("./locations.json");
 
-function App() {
+export default function App() {
+  const locate = locations;
+  const clicked = () => {
+    console.log(locations);
+  };
+
   return (
     <div className="App">
-      <SimpleMap />
+      <div onClick={clicked()}>hello</div>
+      <Map locations={locate} />
     </div>
   );
 }
