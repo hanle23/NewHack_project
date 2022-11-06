@@ -13,12 +13,20 @@ const History = () => {
           justifyContent: "end",
         }}
       >
-        <button className="sort_btn" style={{ marginBottom: "10px" }}>
+        <button
+          className="sort_btn"
+          style={{ marginBottom: "10px" }}
+          onClick={() => {}}
+        >
           <span>
             Sort By: &nbsp;<strong>Newest</strong>
           </span>
         </button>
-        <button className="main_btn" style={{ marginBottom: "10px" }}>
+        <button
+          className="main_btn"
+          style={{ marginBottom: "10px" }}
+          onClick={() => {}}
+        >
           X
         </button>
       </div>
