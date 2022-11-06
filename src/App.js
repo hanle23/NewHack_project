@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import logo from './logo.svg';
 import './App.css';
-import { Login } from "./Login";
-import { Register } from "./Register";
 
 function App() {
-  const [defaultMode, setdefaultMode] = useState('login');
-
-  const toggleForm = (formName) => {
-    setdefaultMode(formName);
-  }
-
   return (
     <div className="App">
-      {
-        defaultMode === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-      }
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
