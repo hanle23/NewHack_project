@@ -92,6 +92,7 @@ p {
 }
 
 .menu {
+  position: sticky;
   color: rgb(208, 208, 208);
   border-top: 3px solid var(--bordergrey);
   position: absolute;
